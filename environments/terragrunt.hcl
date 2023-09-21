@@ -12,6 +12,7 @@ remote_state {
     bucket = "bucket-tfc-preskok-${local.env}"
     region = "eu-central-1"
     key    = "${path_relative_to_include()}/terraform.tfstate"
+    workspace_key_prefix = "terragrunt-workspace/${var.environment}"
   }
   generate = {
     path      = "backend.tf"
